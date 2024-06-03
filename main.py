@@ -15,6 +15,11 @@ backend_api_url = os.getenv("BACKEND_API_URL", "http://0.0.0.0:8080")
 def start():
     response = requests.get(backend_api_url + "/getdb")
     d = response.json()
-    return jsonify(d)
+    if (d["status"] == "error"):
+        return jsonify({
+            "status": "error",
+            "message": "Something went wrong"
+        })
+    return jsonify(d["data"])
 
 app.run(host=application_host, port=application_port)
