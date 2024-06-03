@@ -14,7 +14,8 @@ backend_api_url = os.getenv("BACKEND_API_URL", "http://0.0.0.0:8080")
 @app.route("/get", methods=["GET"])
 def start():
     response = requests.get(backend_api_url + "/getdb")
-    d = response.json()
-    return jsonify(d)
+    # d = response.json()
+    # return jsonify(d)
+    return response
 
 app.run(host=application_host, port=application_port)
