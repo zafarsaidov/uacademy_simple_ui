@@ -20,6 +20,6 @@ def start():
             "status": "error",
             "message": "Something went wrong"
         })
-    return jsonify(d["data"])
+    return jsonify(d)
 
 app.run(host=application_host, port=application_port)
