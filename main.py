@@ -20,6 +20,6 @@ def start():
             "status": "error",
             "message": "Something went wrong"
         })
-    return jsonify(d)
+    return jsonify(d["data"]["postgres_password"])
 
 app.run(host=application_host, port=application_port)
